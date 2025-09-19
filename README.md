@@ -258,7 +258,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [end-4](https://hyprland.org/)
+- [end-4](https://github.com/end-4/dots-hyprland) - Base files for my customization
 - [Hyprland](https://hyprland.org/) - Amazing Wayland compositor
 - [Quickshell](https://github.com/Quickshell/Quickshell) - Beautiful shell
 - [Hatsune Miku](https://www.crypton.co.jp/miku_eng) - The inspiration for this theme
