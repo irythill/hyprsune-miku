@@ -221,4 +221,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by [irythill](https://linkedin.com/in/irythill)🎵 **
+**Made with ❤️ by [irythill](https://linkedin.com/in/irythill), for all the Hatsune Miku enjoyers**
