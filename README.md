@@ -56,6 +56,7 @@ Special:     #e12885 (225,40,133) - Hatsune Pink
    ```bash
    cp -r hypr ~/.config/
    cp -r quickshell ~/.config/
+   cp -r kitty ~/.config/
    ```
 
 4. **Install required packages:**
@@ -209,12 +210,55 @@ _Add screenshots of your setup here_
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## 🔄 Updating
+
+### Smart Update System
+
+This repository includes a smart update script that preserves your Hatsune Miku customizations while updating from the latest end-4/dots-hyprland configuration.
+
+#### Usage:
+
+```bash
+# Full update (recommended)
+./update.sh
+
+# Only create backup
+./update.sh --backup
+
+# Restore from latest backup
+./update.sh --restore
+
+# Show help
+./update.sh --help
+```
+
+#### What gets preserved:
+
+- **Quickshell Appearance** - Your Hatsune Miku color palette
+- **Lock Screen** - Custom wallpaper and blur effects
+- **Fish Greeting** - ASCII art and custom message
+- **Keybinds** - Volume controls and custom shortcuts
+- **Wallpapers** - Your custom wallpaper collection
+- **Systemd Services** - Lock screen persistence
+
+#### How it works:
+
+1. Creates a backup of your current configuration
+2. Downloads the latest end-4/dots-hyprland configuration
+3. Preserves your Hatsune Miku customizations
+4. Installs the updated configuration
+5. Restores your custom files
+6. Cleans up temporary files
+
+This ensures you get the latest features and fixes while keeping your personal theme! 🎵
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
+- [end-4](https://hyprland.org/)
 - [Hyprland](https://hyprland.org/) - Amazing Wayland compositor
 - [Quickshell](https://github.com/Quickshell/Quickshell) - Beautiful shell
 - [Hatsune Miku](https://www.crypton.co.jp/miku_eng) - The inspiration for this theme

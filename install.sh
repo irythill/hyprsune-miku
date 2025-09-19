@@ -59,6 +59,16 @@ echo -e "${YELLOW}🎨 Installing Quickshell configuration...${NC}"
 cp -r quickshell "$HOME/.config/"
 echo -e "${GREEN}✅ Quickshell configuration installed${NC}"
 
+# Install Kitty configuration
+echo -e "${YELLOW}🐱 Installing Kitty configuration...${NC}"
+if [[ -d "kitty" ]]; then
+    mkdir -p "$HOME/.config/kitty"
+    cp -r kitty/* "$HOME/.config/kitty/"
+    echo -e "${GREEN}✅ Kitty configuration installed${NC}"
+else
+    echo -e "${YELLOW}⚠️  Kitty configuration not found, skipping...${NC}"
+fi
+
 # Install Fish configuration
 echo -e "${YELLOW}🐟 Installing Fish shell configuration...${NC}"
 mkdir -p "$HOME/.config/fish/functions"
