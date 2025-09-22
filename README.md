@@ -8,12 +8,14 @@ A beautiful and optimized Hyprland configuration themed with Hatsune Miku colors
 
 ## ✨ Features
 
-- 🎨 **Hatsune Miku Color Palette** - Custom teal and pink theme
+- 🎨 **Modern Color Palette** - Clean and professional theme
 - ⚡ **Performance Optimized** - Reduced effects for weaker GPUs (NVIDIA GT 710)
 - 🔒 **Quickshell Integration** - Beautiful lock screen with custom wallpaper
 - 🎵 **Custom Volume Controls** - Keyboard shortcuts for volume control
-- 🐟 **Fish Shell** - Custom greeting with Hatsune Miku ASCII art
+- 🐟 **Fish Shell** - Custom greeting with system instructions
 - 🖼️ **Wallpaper Management** - Automatic wallpaper theming
+- 🎯 **Smart Installer** - Interactive installation with user choices
+- 📦 **Complete Package List** - All necessary applications included
 
 ## 🎨 Color Palette
 
@@ -25,33 +27,79 @@ Secondary:   #137a7f (19,122,127) - Deep Blue
 Special:     #e12885 (225,40,133) - Hatsune Pink
 ```
 
+## 📦 Required Packages
+
+### Essential Packages (Core functionality)
+- **hyprland** - Window manager
+- **quickshell** - Shell and lock screen
+- **fish** - Terminal shell
+- **fastfetch** - System information display
+- **kitty** - Terminal emulator
+
+### Audio Packages
+- **pipewire** - Audio server
+- **pipewire-pulse** - PulseAudio compatibility
+- **wireplumber** - Session manager
+
+### Utility Packages
+- **wlogout** - Logout menu
+- **fuzzel** - Application launcher
+- **playerctl** - Media control
+- **brightnessctl** - Brightness control
+
+### Applications (Optional but recommended)
+- **google-chrome** - Web browser (from AUR)
+- **cursor** - Code editor (from AUR)
+- **discord** - Communication
+- **spotify** - Music streaming
+- **insomnia-bin** - API testing (from AUR)
+
+### AUR Helper (Required for AUR packages)
+- **yay** or **paru** - AUR package manager
+
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - Arch Linux (or compatible distribution)
-- Hyprland
-- Quickshell
-- Fish Shell
 - NVIDIA drivers (for optimizations)
+- AUR helper (yay or paru) for installing packages from AUR
 
 ### Installation
+
+#### 🎯 Smart Installation (Recommended)
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/hyprland-dotfiles.git
-   cd hyprland-dotfiles
+   git clone https://github.com/YOUR_USERNAME/hyprsune-miku.git
+   cd hyprsune-miku
    ```
 
-2. **Backup your current config:**
+2. **Run the smart installer:**
+
+   ```bash
+   ./install-smart.sh
+   ```
+
+   The smart installer will:
+   - Detect your GPU and apply appropriate optimizations
+   - Let you choose what to install (Hyprland, Quickshell, Fish, etc.)
+   - Automatically backup your existing configuration
+   - Install required packages
+   - Configure timezone
+   - Guide you through the entire process
+
+#### 🔧 Manual Installation
+
+1. **Backup your current config:**
 
    ```bash
    mv ~/.config/hypr ~/.config/hypr.backup
    mv ~/.config/quickshell ~/.config/quickshell.backup
    ```
 
-3. **Install the configuration:**
+2. **Install the configuration:**
 
    ```bash
    cp -r hypr ~/.config/
@@ -59,10 +107,10 @@ Special:     #e12885 (225,40,133) - Hatsune Pink
    cp -r kitty ~/.config/
    ```
 
-4. **Install required packages:**
+3. **Install required packages:**
 
    ```bash
-   # Core packages
+   # Core packages (essential)
    sudo pacman -S hyprland quickshell fish fastfetch
 
    # Audio
@@ -70,14 +118,29 @@ Special:     #e12885 (225,40,133) - Hatsune Pink
 
    # Utilities
    sudo pacman -S wlogout fuzzel playerctl brightnessctl
+
+   # Essential applications
+   sudo pacman -S kitty
+
+   # Web browsers (from AUR)
+   yay -S google-chrome
+
+   # Development tools (from AUR)
+   yay -S cursor
+
+   # Communication and media
+   sudo pacman -S discord spotify
+
+   # API testing (from AUR)
+   yay -S insomnia-bin
    ```
 
-5. **Set up Fish shell:**
+4. **Set up Fish shell:**
    ```bash
    # Install Fish greeting
    cp fish/functions/fish_greeting.fish ~/.config/fish/functions/
    cp fish/config.fish ~/.config/fish/
-   cp fastfetch/hatsune_ascii_compact.txt ~/.config/fastfetch/
+   cp fastfetch/hatsune_ascii.txt ~/.config/fastfetch/
    ```
 
 ## ⌨️ Key Bindings
