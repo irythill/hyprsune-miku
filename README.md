@@ -239,6 +239,61 @@ Replace the wallpaper at:
 
 - `~/Imagens/Wallpapers/hatsune.jpg`
 
+## 🎮 NVIDIA Driver Installation
+
+### For NVIDIA GT 710 and other GPUs
+
+This dotfile is optimized for NVIDIA GPUs, especially the GT 710. If you're experiencing crashes or performance issues, you may need to install the proprietary NVIDIA driver.
+
+#### Quick Installation
+
+```bash
+# 1. Verify system readiness
+./verify-nvidia-readiness.sh
+
+# 2. Install NVIDIA driver (safe installation with backup)
+./install-nvidia-driver.sh
+
+# 3. Reboot your system
+sudo reboot
+
+# 4. Verify installation
+nvidia-smi
+```
+
+#### Manual Installation
+
+If you prefer manual installation:
+
+```bash
+# Install NVIDIA driver
+sudo pacman -S nvidia-dkms nvidia-utils nvidia-settings libva-nvidia-driver
+
+# Blacklist nouveau
+sudo tee /etc/modprobe.d/nouveau.conf > /dev/null << EOF
+blacklist nouveau
+options nouveau modeset=0
+EOF
+
+# Update initramfs
+sudo mkinitcpio -P
+
+# Add kernel parameter
+sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/&nvidia-drm.modeset=1 /' /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# Reboot
+sudo reboot
+```
+
+#### Recovery
+
+If you need to switch back to nouveau:
+
+```bash
+./recover-from-nouveau.sh
+```
+
 ## 🐛 Troubleshooting
 
 ### Volume Controls Not Working
